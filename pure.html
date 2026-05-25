@@ -4,12 +4,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pure Sine Wave IPS</title>
 
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* keep your existing CSS (unchanged) */
+
+/* ================= SLIDER ================= */
+
+.slider{
+    position:relative;
+    width:100%;
+    height:240px;
+    overflow:hidden;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.slider img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:none;
+    border-radius:15px;
+}
+
+.slider img.active{
+    display:block;
+}
+
+/* ARROWS */
+
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.left{ left:10px; }
+.right{ right:10px; }
+
+/* ================= QUANTITY ================= */
+
+.quantity-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.quantity-box button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:10px;
+    background:#00e5ff;
+    color:black;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.quantity{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* ================= BUTTON ================= */
+
+.confirm-btn{
+    width:100%;
+    background:#25D366;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.confirm-btn:hover{
+    opacity:0.9;
+}
+
 </style>
 
 </head>
@@ -17,14 +105,31 @@
 <body>
 
 <header>
+
 <nav>
-<h1 class="logo"><a href="index.html">SmartTech BD</a></h1>
-<ul><li><a href="index.html">Home</a></li></ul>
+
+<h1 class="logo">
+  <a href="index.html">SmartTech BD</a>
+</h1>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+</ul>
+
 </nav>
+
 </header>
 
 <section class="products">
+
 <h2>Pure Sine Wave IPS</h2>
+
+<div class="product-grid">
+
+<!-- ================= PRODUCT 1 ================= -->
+<div class="product-card">
+
+<!-- SLIDER -->
 <div class="slider">
 
 <button class="arrow left" onclick="prevSlide('slider1')">❮</button>
@@ -36,19 +141,18 @@
 <button class="arrow right" onclick="nextSlide('slider1')">❯</button>
 
 </div>
-<div class="product-grid">
-
-<!-- PRODUCT 1 -->
-<div class="product-card">
 
 <h3>650VA Pure IPS</h3>
 <p>Best quality pure sine wave IPS</p>
 <span>৳12,000</span>
 
+<!-- QUANTITY -->
 <div class="quantity-box">
+
 <button onclick="decreaseQty('qty1')">-</button>
 <div id="qty1">1</div>
 <button onclick="increaseQty('qty1')">+</button>
+
 </div>
 
 <button class="confirm-btn"
@@ -58,17 +162,33 @@ Submit Order
 
 </div>
 
-<!-- PRODUCT 2 -->
+<!-- ================= PRODUCT 2 ================= -->
 <div class="product-card">
+
+<!-- SLIDER -->
+<div class="slider">
+
+<button class="arrow left" onclick="prevSlide('slider2')">❮</button>
+
+<img src="images/4.png" class="slider2 active">
+<img src="images/5.png" class="slider2">
+<img src="images/6.png" class="slider2">
+
+<button class="arrow right" onclick="nextSlide('slider2')">❯</button>
+
+</div>
 
 <h3>850VA Pure IPS</h3>
 <p>Heavy backup system</p>
 <span>৳18,500</span>
 
+<!-- QUANTITY -->
 <div class="quantity-box">
+
 <button onclick="decreaseQty('qty2')">-</button>
 <div id="qty2">1</div>
 <button onclick="increaseQty('qty2')">+</button>
+
 </div>
 
 <button class="confirm-btn"
@@ -79,11 +199,62 @@ Submit Order
 </div>
 
 </div>
+
 </section>
 
 <script>
 
-/* QUANTITY */
+/* ================= SLIDER ================= */
+
+let slideIndexes = {};
+
+function showSlide(className, index){
+
+    let slides = document.getElementsByClassName(className);
+
+    for(let i=0;i<slides.length;i++){
+        slides[i].classList.remove("active");
+    }
+
+    slides[index].classList.add("active");
+}
+
+function nextSlide(className){
+
+    let slides = document.getElementsByClassName(className);
+
+    if(slideIndexes[className] == undefined){
+        slideIndexes[className] = 0;
+    }
+
+    slideIndexes[className]++;
+
+    if(slideIndexes[className] >= slides.length){
+        slideIndexes[className] = 0;
+    }
+
+    showSlide(className, slideIndexes[className]);
+}
+
+function prevSlide(className){
+
+    let slides = document.getElementsByClassName(className);
+
+    if(slideIndexes[className] == undefined){
+        slideIndexes[className] = 0;
+    }
+
+    slideIndexes[className]--;
+
+    if(slideIndexes[className] < 0){
+        slideIndexes[className] = slides.length - 1;
+    }
+
+    showSlide(className, slideIndexes[className]);
+}
+
+/* ================= QUANTITY ================= */
+
 function increaseQty(id){
     document.getElementById(id).innerText++;
 }
@@ -93,7 +264,8 @@ function decreaseQty(id){
     if(el.innerText > 1) el.innerText--;
 }
 
-/* GO TO CHECKOUT */
+/* ================= CHECKOUT ================= */
+
 function goCheckout(product, qtyId){
 
     let qty = document.getElementById(qtyId).innerText;
