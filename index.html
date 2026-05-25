@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartTech BD</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+
+<nav>
+
+<h1 class="logo">
+  <a href="#home">SmartTech BD</a>
+</h1>
+
+<!-- SEARCH BOX -->
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search products...">
+
+<button onclick="searchProducts()">
+
+🔍
+
+</button>
+
+</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#products">Products</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#calculator">IPS Calculator</a></li>
+
+<li><a href="3dprint.html">3D Printing</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h2>
+Custom Smart Electronics & Power Backup Solutions
+</h2>
+
+<p>
+Custom UPS | IPS | Pure Sine Wave Inverter |
+Used UPS/IPS | Modified UPS |
+Smart Switch | IR Fan Light Controller |
+Table Lamp | Custom Electronics
+</p>
+
+<div class="hero-buttons">
+
+<a href="#products" class="btn primary">
+Explore Products
+</a>
+
+<a href="https://wa.me/8801720262742"
+target="_blank"
+class="btn whatsapp">
+
+WhatsApp Us
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+<div class="feature-card">
+
+<h3>⚡ Premium Build Quality</h3>
+
+<p>
+All products are designed and assembled by
+SmartTech BD with high quality components.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>🛠 Warranty & Support</h3>
+
+<p>
+2 years warranty for new IPS/UPS/Inverter
+and 8-10 months warranty for used or
+modified systems (without battery).
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📱 Smart Technology</h3>
+
+<p>
+Smart switches, IR fan-light controllers,
+automation systems, smart toys,
+and custom tech products.
+</p>
+
+</div>
+
+</section>
+
+<!-- CALCULATOR -->
+<section class="calculator-section" id="calculator">
+
+<h2>Custom IPS / UPS Order System</h2>
+
+<p class="calc-info">
+Default Calculation:
+1 Fan = 120 VA |
+1 Light = 30 VA
+</p>
+
+<div class="calculator-box">
+
+<div class="input-group">
+
+<label>Number of Fans</label>
+
+<input type="number"
+id="fanCount"
+value="1"
+min="0">
+
+</div>
+
+<div class="input-group">
+
+<label>Number of Lights</label>
+
+<input type="number"
+id="lightCount"
+value="1"
+min="0">
+
+</div>
+
+<button onclick="calculateIPS()"
+class="btn primary">
+
+Calculate Requirement
+
+</button>
+
+<div class="result-box">
+
+<h3>
+Total Load:
+<span id="totalVA">150</span> VA
+</h3>
+
+<p id="suggestion">
+Recommended:
+650VA IPS — ৳12,000
+</p>
+
+</div>
+
+</div>
+
+<!-- STOCK TABLE -->
+<div class="stock-table">
+
+<h3>Available IPS / UPS Stock</h3>
+
+<table>
+
+<tr>
+
+<th>Model</th>
+<th>Capacity</th>
+<th>Warranty</th>
+<th>Price</th>
+
+</tr>
+
+<tr>
+
+<td>SmartTech Mini IPS</td>
+<td>650 VA</td>
+<td>2 Years</td>
+<td>৳12,000</td>
+
+</tr>
+
+<tr>
+
+<td>Pure Sine Wave IPS</td>
+<td>850 VA</td>
+<td>2 Years</td>
+<td>৳18,500</td>
+
+</tr>
+
+<tr>
+
+<td>Modified IPS</td>
+<td>650 VA</td>
+<td>8-10 Months</td>
+<td>৳8,500</td>
+
+</tr>
+
+<tr>
+
+<td>Used UPS</td>
+<td>850 VA</td>
+<td>8 Months</td>
+<td>৳6,500</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+
+<h2>Our Product Categories</h2>
+
+<div class="product-grid">
+
+<a href="pure.html" class="product-card">
+
+<h3>Pure Sine Wave IPS</h3>
+
+<p>
+Premium sine wave backup systems.
+</p>
+
+</a>
+
+<a href="used.html" class="product-card">
+
+<h3>Used IPS / UPS</h3>
+
+<p>
+Affordable used backup solutions.
+</p>
+
+</a>
+
+<a href="modified.html" class="product-card">
+
+<h3>Modified UPS</h3>
+
+<p>
+Custom modified power systems.
+</p>
+
+</a>
+
+<a href="smart.html" class="product-card">
+
+<h3>Smart Switch & Controller</h3>
+
+<p>
+IoT and smart automation systems.
+</p>
+
+</a>
+
+<a href="lamp.html" class="product-card">
+
+<h3>Table Lamp</h3>
+
+<p>
+Modern decorative lighting systems.
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- 3D PRINTING -->
+<section class="services">
+
+<h2>Custom 3D Printing Service</h2>
+
+<div class="service-grid">
+
+<a href="3dprint.html" class="service-card">
+
+<h3>⚡ 3D Printing</h3>
+
+<p>
+Custom 3D design and high quality
+3D printing service for projects,
+toys, electronics box, decoration,
+prototype and custom products.
+</p>
+
+</a>
+
+<a href="3dprint.html" class="service-card">
+
+<h3>🛠 Custom Design</h3>
+
+<p>
+We create custom 3D models
+for your personal and business use.
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+<h2>Our Services</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+
+<h3>Custom IPS Build</h3>
+
+<p>
+Custom pure sine wave IPS
+and inverter systems.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Smart Automation</h3>
+
+<p>
+Smart switch and IR
+controller systems.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Repair Service</h3>
+
+<p>
+UPS, IPS and inverter
+repair support.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<h3>Custom Electronics</h3>
+
+<p>
+Table lamp, smart toys
+and electronics projects.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h2>Contact SmartTech BD</h2>
+
+<p>📞 +8801720262742</p>
+
+<p>💬 WhatsApp Available 24/7</p>
+
+<p>📍 Bangladesh</p>
+
+<a href="https://wa.me/8801720262742"
+target="_blank"
+class="btn whatsapp big-btn">
+
+Start WhatsApp Chat
+
+</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+© 2026 SmartTech BD |
+All Rights Reserved
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

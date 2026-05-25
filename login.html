@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - SmartTech BD</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* LOGIN BOX */
+.login-container {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: #38bdf8;
+    color: black;
+}
+
+.login-btn:hover {
+    background: #0ea5e9;
+}
+
+/* SOCIAL BUTTONS */
+.google {
+    background: white;
+    color: black;
+}
+
+.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+/* SMALL TEXT */
+.small {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<h2>SmartTech BD Login</h2>
+
+<!-- EMAIL LOGIN -->
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Password">
+
+<button class="login-btn" onclick="login()">
+Login
+</button>
+
+<!-- OR -->
+<p class="small">OR</p>
+
+<!-- GOOGLE LOGIN -->
+<button class="google" onclick="googleLogin()">
+Continue with Google
+</button>
+
+<!-- FACEBOOK LOGIN -->
+<button class="facebook" onclick="facebookLogin()">
+Continue with Facebook
+</button>
+
+<p class="small">
+Don't have an account? <a href="#">Register</a>
+</p>
+
+</div>
+
+<script>
+
+function login() {
+    alert("Email Login Clicked (connect backend later)");
+}
+
+function googleLogin() {
+    alert("Google Login (use Firebase/Auth API later)");
+    // later: window.location.href = "YOUR_GOOGLE_AUTH_URL";
+}
+
+function facebookLogin() {
+    alert("Facebook Login (use OAuth later)");
+    // later: window.location.href = "YOUR_FACEBOOK_AUTH_URL";
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Sine Wave IPS</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* keep your existing CSS (unchanged) */
+</style>
+
+</head>
+
+<body>
+
+<header>
+<nav>
+<h1 class="logo"><a href="index.html">SmartTech BD</a></h1>
+<ul><li><a href="index.html">Home</a></li></ul>
+</nav>
+</header>
+
+<section class="products">
+<h2>Pure Sine Wave IPS</h2>
+
+<div class="product-grid">
+
+<!-- PRODUCT 1 -->
+<div class="product-card">
+
+<h3>650VA Pure IPS</h3>
+<p>Best quality pure sine wave IPS</p>
+<span>৳12,000</span>
+
+<div class="quantity-box">
+<button onclick="decreaseQty('qty1')">-</button>
+<div id="qty1">1</div>
+<button onclick="increaseQty('qty1')">+</button>
+</div>
+
+<button class="confirm-btn"
+onclick="goCheckout('650VA Pure IPS','qty1')">
+Submit Order
+</button>
+
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="product-card">
+
+<h3>850VA Pure IPS</h3>
+<p>Heavy backup system</p>
+<span>৳18,500</span>
+
+<div class="quantity-box">
+<button onclick="decreaseQty('qty2')">-</button>
+<div id="qty2">1</div>
+<button onclick="increaseQty('qty2')">+</button>
+</div>
+
+<button class="confirm-btn"
+onclick="goCheckout('850VA Pure IPS','qty2')">
+Submit Order
+</button>
+
+</div>
+
+</div>
+</section>
+
+<script>
+
+/* QUANTITY */
+function increaseQty(id){
+    document.getElementById(id).innerText++;
+}
+
+function decreaseQty(id){
+    let el = document.getElementById(id);
+    if(el.innerText > 1) el.innerText--;
+}
+
+/* GO TO CHECKOUT */
+function goCheckout(product, qtyId){
+
+    let qty = document.getElementById(qtyId).innerText;
+
+    localStorage.setItem("product", product);
+    localStorage.setItem("quantity", qty);
+
+    window.location.href = "checkout.html";
+}
+
+</script>
+
+</body>
+</html>
