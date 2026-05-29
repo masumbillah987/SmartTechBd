@@ -469,4 +469,279 @@ footer{
 .hidden {
   display: none;
 }
+/* ================= MOBILE RESPONSIVE FIX ================= */
 
+@media(max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+    nav{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:15px 5%;
+    }
+
+    .logo{
+        font-size:28px;
+        text-align:center;
+    }
+
+    nav ul{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    nav ul li a{
+        font-size:15px;
+    }
+
+    /* SEARCH */
+    .search-box{
+        width:100%;
+        max-width:100%;
+    }
+
+    .search-box input{
+        font-size:16px;
+    }
+
+    /* HERO */
+    .hero{
+        height:auto;
+        padding:80px 20px;
+    }
+
+    .hero-content h2{
+        font-size:34px;
+        line-height:1.3;
+    }
+
+    .hero-content p{
+        font-size:16px;
+        line-height:1.6;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    /* SECTIONS */
+    .features,
+    .products,
+    .services,
+    .contact,
+    .calculator-section{
+        padding:60px 5%;
+    }
+
+    .products h2,
+    .services h2,
+    .contact h2,
+    .calculator-section h2{
+        font-size:30px;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid,
+    .service-grid,
+    .view-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* CARDS */
+    .product-card,
+    .service-card,
+    .feature-card,
+    .view-card{
+        padding:22px;
+    }
+
+    /* SLIDER */
+    .slider{
+        height:220px;
+    }
+
+    .slider img{
+        height:220px;
+    }
+
+    .arrow{
+        width:40px;
+        height:40px;
+        font-size:18px;
+    }
+
+    /* QUANTITY */
+    .quantity-box{
+        gap:10px;
+    }
+
+    .quantity-box button,
+    .quantity-btn{
+        width:38px;
+        height:38px;
+        font-size:20px;
+    }
+
+    /* BUTTONS */
+    .btn,
+    .confirm-btn{
+        width:100%;
+        font-size:16px;
+        padding:14px;
+    }
+
+    /* INPUT */
+    input,
+    textarea,
+    select{
+        font-size:16px;
+    }
+
+    /* TABLE */
+    .stock-table{
+        overflow-x:auto;
+    }
+
+    .stock-table table{
+        min-width:600px;
+    }
+
+    /* CONTACT */
+    .big-btn{
+        width:100%;
+    }
+
+    /* FOOTER */
+    footer{
+        font-size:14px;
+        padding:20px;
+    }
+
+}
+
+/* EXTRA SMALL PHONE FIX */
+
+@media(max-width:480px){
+
+    .hero-content h2{
+        font-size:28px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    .products h2,
+    .services h2,
+    .contact h2,
+    .calculator-section h2{
+        font-size:26px;
+    }
+
+    .slider{
+        height:200px;
+    }
+
+    .slider img{
+        height:200px;
+    }
+
+}
+/* ================= HOME IMAGE SLIDER ================= */
+
+.home-slider-section{
+
+    padding:70px 8%;
+    text-align:center;
+    background:#111827;
+}
+
+.home-slider-section h2{
+
+    font-size:42px;
+    margin-bottom:35px;
+    color:#00e5ff;
+}
+
+.home-slider{
+
+    position:relative;
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.home-slide{
+
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    display:none;
+    border-radius:20px;
+}
+
+.home-slide.active{
+    display:block;
+}
+
+/* ARROWS */
+
+.home-arrow{
+
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:28px;
+    z-index:10;
+}
+
+.home-arrow.left{
+    left:15px;
+}
+
+.home-arrow.right{
+    right:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .home-slider-section{
+        padding:50px 5%;
+    }
+
+    .home-slider-section h2{
+        font-size:30px;
+    }
+
+    .home-slide{
+        height:250px;
+    }
+
+    .home-arrow{
+        width:42px;
+        height:42px;
+        font-size:20px;
+    }
+}
