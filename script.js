@@ -275,3 +275,51 @@ function sendOrder(event, product, qtyId) {
 
     window.open(url, "_blank");
 }
+/* ================= HOME PAGE SLIDER ================= */
+
+let homeIndex = 0;
+
+const homeSlides =
+document.querySelectorAll(".home-slide");
+
+/* SHOW SLIDE */
+
+function showHomeSlide(index){
+
+    homeSlides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    homeSlides[index].classList.add("active");
+}
+
+/* NEXT / PREV BUTTON */
+
+function changeHomeSlide(direction){
+
+    homeIndex += direction;
+
+    if(homeIndex >= homeSlides.length){
+        homeIndex = 0;
+    }
+
+    if(homeIndex < 0){
+        homeIndex = homeSlides.length - 1;
+    }
+
+    showHomeSlide(homeIndex);
+}
+
+/* AUTO SLIDE EVERY 3 SECONDS */
+
+setInterval(() => {
+
+    homeIndex++;
+
+    if(homeIndex >= homeSlides.length){
+        homeIndex = 0;
+    }
+
+    showHomeSlide(homeIndex);
+
+}, 3000);
