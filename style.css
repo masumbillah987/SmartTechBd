@@ -863,4 +863,7 @@ footer{
         transform:translateY(0);
     }
 }
+nav ul li a{
+    white-space: nowrap;
+}
 
