@@ -745,3 +745,122 @@ footer{
         font-size:20px;
     }
 }
+/* ================= PROFESSIONAL MOBILE NAVBAR ================= */
+
+.nav-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    width:100%;
+}
+
+/* MENU ICON */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    color:#00e5ff;
+}
+
+/* MOBILE MENU */
+
+@media(max-width:768px){
+
+    header{
+        position:sticky;
+        top:0;
+        z-index:1000;
+    }
+
+    nav{
+        padding:15px 5%;
+    }
+
+    .nav-top{
+        width:100%;
+    }
+
+    .logo{
+        font-size:24px;
+        white-space:nowrap;
+    }
+
+    /* SEARCH BAR */
+
+    .search-box{
+        flex:1;
+        max-width:100%;
+        margin:0;
+    }
+
+    .search-box input{
+        font-size:15px;
+        padding:10px;
+    }
+
+    .search-box button{
+        padding:10px 14px;
+    }
+
+    /* SHOW MENU ICON */
+
+    .menu-toggle{
+        display:block;
+    }
+
+    /* HIDE MENU */
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:#111827;
+        margin-top:15px;
+        padding:15px;
+        border-radius:15px;
+        gap:15px;
+        animation:fadeMenu 0.3s ease;
+    }
+
+    /* SHOW MENU */
+
+    nav ul.show-menu{
+        display:flex;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:10px;
+        border-radius:10px;
+        background:#1e293b;
+    }
+
+    /* HERO FIX */
+
+    .hero{
+        padding-top:100px;
+    }
+}
+
+/* MENU ANIMATION */
+
+@keyframes fadeMenu{
+
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
