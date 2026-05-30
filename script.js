@@ -323,3 +323,11 @@ setInterval(() => {
     showHomeSlide(homeIndex);
 
 }, 3000);
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navMenu")
+    .classList.toggle("show-menu");
+}
