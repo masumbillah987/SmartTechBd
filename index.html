@@ -14,16 +14,20 @@
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= HEADER ================= -->
+
 <header>
 
 <nav>
 
+<!-- TOP ROW -->
+<div class="nav-top">
+
 <h1 class="logo">
-  <a href="#home">SmartTech BD</a>
+<a href="#home">SmartTech BD</a>
 </h1>
 
-<!-- SEARCH BOX -->
+<!-- SEARCH -->
 <div class="search-box">
 
 <input
@@ -32,14 +36,23 @@ id="searchInput"
 placeholder="Search products...">
 
 <button onclick="searchProducts()">
-
 🔍
-
 </button>
 
 </div>
 
-<ul>
+<!-- MENU BUTTON -->
+<div class="menu-toggle"
+onclick="toggleMenu()">
+
+☰
+
+</div>
+
+</div>
+
+<!-- NAV MENU -->
+<ul id="navMenu">
 
 <li><a href="#home">Home</a></li>
 
@@ -49,7 +62,7 @@ placeholder="Search products...">
 
 <li><a href="#calculator">IPS Calculator</a></li>
 
-<li><a href="3dprint.html">3D Printing</a></li>
+<li><a href="3dprint.html">3D Print</a></li>
 
 <li><a href="#contact">Contact</a></li>
 
